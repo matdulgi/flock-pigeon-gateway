@@ -1,7 +1,7 @@
-package dulgi.pigeon.controller;
+package dulgi.flock.pigeon.gateway.controller;
 
-import dulgi.pigeon.model.Token;
-import dulgi.pigeon.service.TokenService;
+import dulgi.flock.pigeon.gateway.service.TokenService;
+import dulgi.flock.pigeon.gateway.model.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

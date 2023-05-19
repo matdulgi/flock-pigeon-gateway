@@ -1,4 +1,4 @@
-package dulgi.pigeon;
+package dulgi.flock.pigeon.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

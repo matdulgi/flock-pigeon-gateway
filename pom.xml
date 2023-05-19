@@ -8,14 +8,15 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.11</version>
     </parent>
-    <groupId>org.example</groupId>
-    <artifactId>dulgi-pigeon-server</artifactId>
+    <groupId>dulgi</groupId>
+    <artifactId>flock-pigeon-gateway</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <start-class>dulgi.flock.pigeon.gateway.Main</start-class>
     </properties>
     <dependencies>
         <dependency>
@@ -30,8 +31,6 @@
             <version>3.1.2</version>
         </dependency>
 
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -42,6 +41,48 @@
             <artifactId>commons-dbcp2</artifactId>
             <version>2.9.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.0</version>
+        </dependency>
 
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+<!--                <configuration>-->
+<!--                    <createDependencyReducedPom>true</createDependencyReducedPom>-->
+<!--                    <transformers>-->
+<!--                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
+<!--                            <mainClass>dulgi.flock.pigeon.gateway.Main</mainClass>-->
+<!--                        </transformer>-->
+<!--                    </transformers>-->
+<!--                </configuration>-->
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
 </project>

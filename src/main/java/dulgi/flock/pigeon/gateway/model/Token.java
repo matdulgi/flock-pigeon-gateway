@@ -1,4 +1,4 @@
-package dulgi.pigeon.model;
+package dulgi.flock.pigeon.gateway.model;
 
 
 public class Token {

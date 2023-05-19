@@ -1,4 +1,4 @@
-package dulgi.pigeon.dao;
+package dulgi.flock.pigeon.gateway.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -17,5 +17,6 @@ public class TokenDAO {
     public void insertNewToken(String uuID, String token, String registeredTime) {
         jdbcTemplateToken.execute("INSERT INTO sj_practice VALUES ('" + uuID + "', '" + token + "', '" + registeredTime + "');");
     }
+
 
 }
